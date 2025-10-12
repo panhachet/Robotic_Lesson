@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Premium - Robotics Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  header {
+    background: #a20e20;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap; /* allow wrapping for small screens */
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0.8rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+
+  ul { 
+    list-style: none; 
+    padding: 0; 
+    margin-bottom: 30px;
+  }
+  ul li { 
+    margin: 10px 0; 
+    font-size: 1.0rem;
+  }
+
+  /* Subscription Plans */
+  .plan-options {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  .plan-box {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fff;
+  }
+  .plan-box input { display: none; }
+  .plan-box:hover { border-color: #1abc9c; transform: scale(1.05); }
+  .plan-box.selected {
+    border-color: #1abc9c;
+    background: #ecfdf5;
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+  }
+  .plan-box h3 {
+    margin: 0;
+    color: #1a237e;
+    font-size: 1.2rem;
+  }
+
+  /* Payment Methods */
+  .payment-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+  }
+  .option-box {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+  .option-box img {
+    max-width: 80px;
+    max-height: 50px;
+    margin-bottom: 10px;
+  }
+  .option-box input { display: none; }
+  .option-box:hover { border-color: #1abc9c; transform: scale(1.05); }
+  .option-box.selected {
+    border-color: #1abc9c;
+    background: #ecfdf5;
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+  }
+  .option-box p {
+    margin: 0;
+    font-weight: bold;
+    color: #0f1236;
+  }
+
+  /* Pay Button */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover { background: #16a085; }
+
+  footer {
+    text-align: center;
+    background: #a20e20;
+    color: white;
+    padding: 1rem;
+    margin-top: 50px;
+    font-size: 0.9rem;
+  }
+
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav {
+      justify-content: flex-start;
+    }
+    section {
+      margin: 20px;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .plan-box {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav a {
+      margin: 0.3rem 0;
+    }
+    section {
+      margin: 15px;
+      padding: 15px;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+    .plan-box h3 {
+      font-size: 1.1rem;
+    }
+    .option-box {
+      width: 120px;
+      height: 120px;
+      padding: 10px;
+    }
+    .option-box img {
+      max-width: 60px;
+      max-height: 40px;
+    }
+    .btn {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Get Premium</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a href="membership.html">Get Premium</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Why Premium?</h2>
+    <ul>
+      <li>✅ Access to all premium lessons (ROS, SLAM, NMPC, etc.)</li>
+      <li>✅ Downloadable PDFs & code examples</li>
+      <li>✅ Exclusive robotics projects</li>
+      <li>✅ Priority email support</li>
+    </ul>
+
+    <h2>Choose Your Plan</h2>
+    <div class="plan-options">
+      <label class="plan-box selected">
+        <input type="radio" name="plan" value="monthly" checked>
+        <h3>$2 / Month</h3>
+      </label>
+      <label class="plan-box">
+        <input type="radio" name="plan" value="yearly">
+        <h3>$20 / Year</h3>
+      </label>
+    </div>
+
+    <h2>Choose Payment Method</h2>
+    <form id="payment-form">
+      <div class="payment-options">
+        <label class="option-box">
+          <input type="radio" name="payment" value="paypal">
+          <img src="image/Paypal_2014_logo.png" alt="PayPal">
+          <p>PayPal</p>
+        </label>
+        <label class="option-box">
+          <input type="radio" name="payment" value="visa">
+          <img src="image/visa.png" alt="Visa">
+          <p>Visa</p>
+        </label>
+        <label class="option-box">
+          <input type="radio" name="payment" value="mastercard">
+          <img src="image/mastercard.png" alt="MasterCard">
+          <p>MasterCard</p>
+        </label>
+        <label class="option-box">
+          <input type="radio" name="payment" value="aba">
+          <img src="image/aba.png" alt="ABA Scan">
+          <p>ABA Bank Scan</p>
+        </label>
+      </div>
+      <button type="button" class="btn" id="payBtn" onclick="pay()">Pay $2</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Robotics Academy</p>
+  </footer>
+
+  <script>
+    const payBtn = document.getElementById("payBtn");
+
+    // Plan selection
+    document.querySelectorAll(".plan-box").forEach(box => {
+      box.addEventListener("click", () => {
+        document.querySelectorAll(".plan-box").forEach(b => b.classList.remove("selected"));
+        box.classList.add("selected");
+        box.querySelector("input").checked = true;
+        const plan = box.querySelector("input").value;
+        payBtn.textContent = plan === "monthly" ? "Pay $2" : "Pay $20";
+      });
+    });
+
+    // Payment selection
+    document.querySelectorAll(".option-box").forEach(box => {
+      box.addEventListener("click", () => {
+        document.querySelectorAll(".option-box").forEach(b => b.classList.remove("selected"));
+        box.classList.add("selected");
+        box.querySelector("input").checked = true;
+      });
+    });
+
+    function pay() {
+      const plan = document.querySelector('input[name="plan"]:checked').value;
+      const method = document.querySelector('input[name="payment"]:checked');
+
+      if (!method) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+      const amount = plan === "monthly" ? "$2" : "$20";
+      alert(`You chose ${plan} plan with ${method.value} payment.\nAmount: ${amount}`);
+    }
+  </script>
+</body>
+</html>

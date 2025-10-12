@@ -1,0 +1,21 @@
+/* body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; color: #333; }
+header { background: #2c3e50; color: white; padding: 15px; text-align: center; }
+nav a { color: #fff; margin: 0 10px; text-decoration: none; }
+nav a:hover { color: #1abc9c; }
+.hero { text-align: center; padding: 50px; background: #ecf0f1; }
+.btn { background: #1abc9c; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; }
+.btn:hover { background: #16a085; }
+.categories .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; }
+.card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.lesson-list ul { list-style: none; padding: 0; }
+.lesson-list li { margin: 10px 0; }
+.badge { padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-left: 10px; }
+.free { background: #2ecc71; color: white; }
+.premium { background: #e67e22; color: white; }
+.lesson { max-width: 900px; margin: auto; padding: 20px; background: white; border-radius: 10px; }
+pre { background: #eee; padding: 10px; border-radius: 6px; overflow-x: auto; }
+img { max-width: 100%; border-radius: 10px; }
+.premium-box { margin-top: 20px; padding: 15px; background: #fceae4; border-left: 5px solid #e67e22; border-radius: 8px; }
+footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 40px; } */
+
+

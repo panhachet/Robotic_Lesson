@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 1: Introduction - Robotics Academy</title>
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #a20e20;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Layout */
+.main-container {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.sidebar h3 {
+  margin-top: 0;
+  color: #a20e20;
+}
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin: 10px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.sidebar a:hover {
+  background: #1abc9c;
+  color: white;
+}
+
+/* Lesson content */
+.lesson {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+.lesson h2 {
+  color: #010208;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 5px solid #1abc9c;
+  padding-left: 10px;
+}
+.lesson p {
+  margin-bottom: 15px;
+}
+
+/* Arrow links */
+.arrow-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.arrow-link {
+  text-decoration: none;
+  color: #1abc9c;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.arrow-link:hover {
+  text-decoration: underline;
+  color: #159a82;
+}
+
+/* Premium content box */
+.premium-box {
+  background: #ecfdf5;
+  border-left: 5px solid #1abc9c;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+.premium-box a {
+  color: #1abc9c;
+  font-weight: bold;
+  text-decoration: none;
+}
+.premium-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .main-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  .lesson {
+    padding: 20px;
+  }
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+  margin-left: 1rem; /* space between links */
+}
+
+footer {
+  text-align: center;
+  background: #a20e20;
+  color: white;
+  padding: 1rem;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Lesson 2: Robot Kinematics</h1>
+  <nav>
+    <a href="../../../lessons.html">← Back to Lessons</a>
+    <a href="../../../index.html">  Home</a>
+  </nav>
+</header>
+
+<div class="main-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Lesson Menu</h3>
+    <a href="lesson1.html">Lesson 1: Introduction</a>
+    <a href="lesson2.html">Lesson 2: Robot Kinematics</a>
+    <a href="lesson3.html">Lesson 3: Differential Drive</a>
+    <a href="lesson4.html">Lesson 4: Forward Kinematics</a>
+    <a href="lesson5.html">Lesson 5: Examples</a>
+  </div>
+
+  <!-- Lesson content -->
+  <div class="lesson">
+    <section id="lesson2">
+      <h2>Lesson 2: Robot Kinematics</h2>
+      <p>A differential drive robot uses two independently driven wheels placed on either side. By controlling the speed of each wheel, the robot can move forward, backward, and rotate in place.</p>
+    </section>
+
+    <!-- Premium / Ad Box -->
+    <div class="premium-box">
+      <p>🔒 More advanced content (trajectory tracking, NMPC, and other examples) is available in <a href="../../../membership.html">Premium</a>.</p>
+    </div>
+
+    <!-- Arrow navigation before footer -->
+    <div class="arrow-navigation">
+      <a class="arrow-link" href="lesson1.html">← Back to Lesson 1: Introduction</a>
+      <a class="arrow-link" href="lesson3.html">Go to Lesson 3: Differential Drive →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Robotics Academy</p>
+</footer>
+
+</body>
+</html>

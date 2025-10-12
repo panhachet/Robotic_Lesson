@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basics ROS2 - Robotics Academy</title>
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #a20e20;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Layout */
+.main-container {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.sidebar h3 {
+  margin-top: 0;
+  color: #a20e20;
+}
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin: 10px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.sidebar a:hover {
+  background: #1abc9c;
+  color: white;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+.content h2 {
+  color: #a20e20;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 5px solid #1abc9c;
+  padding-left: 10px;
+}
+.content p {
+  margin-bottom: 15px;
+}
+
+/* Code blocks */
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+}
+
+/* Premium / Ad Box */
+.premium-box {
+  background: #ecfdf5;
+  border-left: 5px solid #1abc9c;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+.premium-box a {
+  color: #1abc9c;
+  font-weight: bold;
+  text-decoration: none;
+}
+.premium-box a:hover {
+  text-decoration: underline;
+}
+
+/* Arrow navigation */
+.arrow-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.arrow-link {
+  text-decoration: none;
+  color: #1abc9c;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.arrow-link:hover {
+  text-decoration: underline;
+  color: #159a82;
+}
+.arrow-link.left::before {
+  content: "← ";
+}
+.arrow-link.right::after {
+  content: " →";
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  .content {
+    padding: 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  background: #a20e20;
+  color: white;
+  padding: 1rem;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Basics ROS2 (Python)</h1>
+  <nav>
+    <a href="../../lessons.html">← Back to Lessons</a>
+    <a href="../../index.html">  Home</a>
+  </nav>
+</header>
+
+<div class="main-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Lesson Menu</h3>
+    <a href="lesson1.html">Lesson 1: Introduction to ROS2</a>
+    <a href="lesson/lesson2.html">Lesson 2: Installing ROS2</a>
+    <a href="#lesson3">Lesson 3: Creating a ROS2 Workspace</a>
+    <a href="#lesson4">Lesson 4: ROS2 Nodes</a>
+    <a href="#lesson5">Lesson 5: Topics - Publish and Subscribe</a>
+    <a href="#lesson6">Lesson 6: Services</a>
+    <a href="#lesson7">Lesson 7: Actions (Basics)</a>
+    <a href="#lesson8">Lesson 8: Parameters</a>
+    <a href="#lesson9">Lesson 9: ROS2 Command-Line Tools</a>
+    <a href="#lesson10">Lesson 10: Visualizing with RVIZ2</a>
+    <a href="#lesson11">Lesson 11: Launch Files</a>
+    <a href="#lesson12">Lesson 12: Recording and Replaying Data</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <section id="lesson1">
+      <h2>Lesson 1: Introduction to ROS2</h2>
+      <p>What is ROS2, why it is important in robotics, and the differences from ROS1. See examples of where ROS2 is used (drones, mobile robots, autonomous vehicles).</p>
+    </section>
+
+    <section id="lesson2">
+      <h2>Lesson 2: Installing ROS2</h2>
+      <p>Step-by-step setup of ROS2 Humble on Ubuntu. Configure your environment and test your installation with basic commands.</p>
+
+      
+    </section>
+
+    <section id="lesson3">
+      <h2>Lesson 3: Creating a ROS2 Workspace</h2>
+      <p>Learn how to create a workspace, build packages with <code>colcon build</code>, and understand the ROS2 project structure.</p>
+
+    </section>
+
+    <section id="lesson4">
+      <h2>Lesson 4: ROS2 Nodes</h2>
+      <p>Understand what nodes are and how they form the building blocks of ROS2. Write a simple node in Python to print a message.</p>
+    </section>
+
+    <section id="lesson5">
+      <h2>Lesson 5: Topics - Publish and Subscribe</h2>
+      <p>Learn how data is exchanged in ROS2 using topics. Write a publisher that sends messages and a subscriber that listens to them.</p>
+    </section>
+
+    <section id="lesson6">
+      <h2>Lesson 6: Services</h2>
+      <p>Understand the request/response communication style with services. Build a simple service server and a client in Python.</p>
+    </section>
+
+    <section id="lesson7">
+      <h2>Lesson 7: Actions (Basics)</h2>
+      <p>Get an introduction to actions, which handle long-running tasks (e.g., moving a robot to a point). Run a simple example to understand how they differ from services.</p>
+    </section>
+
+    <section id="lesson8">
+      <h2>Lesson 8: Parameters</h2>
+      <p>Learn how to configure nodes dynamically using parameters. Practice setting and changing parameters from the command line.</p>
+
+    </section>
+
+    <section id="lesson9">
+      <h2>Lesson 9: ROS2 Command-Line Tools</h2>
+      <p>Use essential CLI tools: <code>ros2 run</code>, <code>ros2 node list</code>, <code>ros2 topic echo</code>, <code>ros2 service call</code>, and <code>ros2 param get/set</code>.</p>
+    </section>
+
+    <section id="lesson10">
+      <h2>Lesson 10: Visualizing with RVIZ2</h2>
+      <p>Introduction to RViz2 for visualizing robot data. Learn to display messages, coordinate frames, and sensor data.</p>
+    </section>
+
+    <section id="lesson11">
+      <h2>Lesson 11: Launch Files</h2>
+      <p>Run multiple nodes at once using launch files. Write a basic launch file for your publisher and subscriber.</p>
+    </section>
+
+    <section id="lesson12">
+      <h2>Lesson 12: Recording and Replaying Data</h2>
+      <p>Record data from topics using <code>ros2 bag record</code> and replay it for testing.</p>
+
+    </section>
+
+
+    <!-- Premium / Ad Box -->
+    <div class="premium-box">
+      <p>🔒 More advanced content (Gazebo simulation, SLAM, Navigation2, and projects) is available in <a href="../../membership.html">Premium</a>.</p>
+    </div>
+
+    <!-- Arrow navigation before footer -->
+    <div class="arrow-navigation">
+      <a class="arrow-link left" href="../../../lessons.html">Back to Lessons</a>
+      <a class="arrow-link right" href="lesson1.html">Go to Lesson 1: Introduction to ROS2</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Robotics Academy</p>
+</footer>
+
+</body>
+</html>

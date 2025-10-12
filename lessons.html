@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lessons - Robotics Academy</title>
+  <style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  /* Header */
+  header {
+    background: #a20e20;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap; /* allow wrapping */
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    scroll-margin-top: 100px; /* adjust based on header height */
+    }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  nav a {
+    margin: 0.5rem 0.8rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #75474d, #ab397f);
+    color: white;
+  }
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Lessons Section */
+  .lesson-list {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 1rem;
+  }
+  .lesson-list h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #a20e20;
+    border-left: 5px solid #1abc9c;
+    padding-left: 10px;
+  }
+
+  .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .lesson-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  }
+  .lesson-card a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  /* Badges */
+  .badge {
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+  }
+  .badge.free {
+    background: #1abc9c;
+  }
+
+  .badge.progress {
+    background: #bc1a1a;
+  }
+
+  .badge.premium {
+    background: #e67e22;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #a20e20;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 60px;
+  }
+
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav {
+      justify-content: flex-start;
+    }
+    .hero h2 {
+      font-size: 1.6rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .lesson-list h2 {
+      font-size: 1.5rem;
+    }
+    .lesson-card a {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav a {
+      margin: 0.3rem 0;
+    }
+    .hero {
+      padding: 2rem 1rem;
+    }
+    .hero h2 {
+      font-size: 1.3rem;
+    }
+    .hero p {
+      font-size: 0.9rem;
+    }
+    .lesson-list {
+      margin: 20px auto;
+    }
+    .lesson-list h2 {
+      font-size: 1.2rem;
+    }
+    .lesson-card {
+      padding: 15px;
+    }
+    .lesson-card a {
+      font-size: 15px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 4px 8px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Lessons</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a href="membership.html">Get Premium</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>All Lessons</h2>
+    <p>Learn Robotics, Python, ROS, C++, and more. Free + Premium content for learners</p>
+  </section>
+
+  <section class="lesson-list">
+    <!-- Robotics -->
+    <h2 id="robotics">Robotics</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="lesson/Robotics/lesson_kinematic.html">Basics of Differential Drive Robots</a>
+        <span class="badge free">Free</span>
+      </div>
+      <div class="lesson-card">
+        <a href="lesson-template.html">Basics Kinematic</a>
+        <span class="badge free">Free</span>
+      </div>
+      <div class="lesson-card">
+        <a href="lesson/Robotics/Basic Wheeled Robots/basic_wheeled_robots_main.html">Basic Wheeled Robots</a>
+        <span class="badge free">Free</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Free Template</a>
+        <span class="badge free">Free</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Path Planning with D* Lite</a>
+        <span class="badge premium">Premium</span>
+      </div>
+    </div>
+
+    <!-- Python -->
+    <h2 id="python">Python</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="#">Python for Robotics</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Data Visualization with Matplotlib</a>
+        <span class="badge premium">Premium</span>
+      </div>
+    </div>
+
+    <!-- ROS/ROS2 -->
+    <h2 id="ros">ROS/ROS2</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="#">ROS</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="lesson/ROS/ros_main.html">Basic ROS2 (Python)</a>
+        <span class="badge free">Free</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Basic ROS2 (C++)</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+
+      <div class="lesson-card">
+        <a href="#">Advanced ROS2 (python)</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Advanced ROS2 (C++)</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+    </div>
+
+    <!-- C++ -->
+    <h2 id="cpp">C++</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="#">C++ Basics for Robotics</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Advanced C++ for Robotics</a>
+        <span class="badge premium">Premium</span>
+      </div>
+    </div>
+
+    <!-- Microcontrollers -->
+    <h2 id="microcontrollers">Microcontrollers</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="#">Introduction to Arduino</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Embedded Systems with STM32</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+    </div>
+
+    <!-- Control Systems -->
+    <h2 id="control">Control Systems</h2>
+    <div class="lesson-grid">
+      <div class="lesson-card">
+        <a href="#">Introduction to Control Theory</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+      <div class="lesson-card">
+        <a href="#">Nonlinear Control in Robotics</a>
+        <span class="badge progress">In Progress</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Robotics Academy</p>
+  </footer>
+</body> 
+</html>

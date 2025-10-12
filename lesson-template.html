@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson: Differential Drive Robots - Robotics Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #a20e20;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Lesson content */
+    .lesson {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .lesson h2 {
+      color: #010208;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-left: 5px solid #1abc9c;
+      padding-left: 10px;
+    }
+    .lesson p {
+      margin-bottom: 15px;
+    }
+    .lesson img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Premium content box */
+    .premium-box {
+      background: #ecfdf5;
+      border-left: 5px solid #1abc9c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      font-weight: 500;
+    }
+    .premium-box a {
+      color: #1abc9c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .premium-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      background: #a20e20;
+      color: white;
+      padding: 1rem;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 600px){
+      .lesson {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Lesson: Differential Drive Robots</h1>
+  <nav>
+    <a href="lessons.html">⬅ Back to Lessons</a>
+  </nav>
+</header>
+
+<div class="lesson">
+  <h2>Introduction</h2>
+  <p>A differential drive robot uses two independently driven wheels placed on either side. By controlling the speed of each wheel, the robot can move forward, backward, and rotate in place.</p>
+
+  <h2>Kinematic Model</h2>
+  <pre>
+x_dot = (r/2) * (ω_r + ω_l) * cos(θ)
+y_dot = (r/2) * (ω_r + ω_l) * sin(θ)
+θ_dot = (r/L) * (ω_r - ω_l)
+  </pre>
+
+  <h2>Example Code (Python)</h2>
+  <pre>
+import numpy as np
+
+r = 0.05
+L = 0.2
+omega_r, omega_l = 2.0, 1.0
+
+x_dot = (r/2) * (omega_r + omega_l) * np.cos(0.0)
+print("x_dot =", x_dot)
+  </pre>
+
+  <h2>Diagram</h2>
+  <img src="images/differential_drive.png" alt="Differential Drive Diagram">
+
+  <div class="premium-box">
+    <p>🔒 More advanced content (e.g., trajectory tracking, NMPC) is available in <a href="membership.html">Premium</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 CHET Sokhpanha | Robotics Academy</p>
+</footer>
+
+</body>
+</html>

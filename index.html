@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics Academy - Learn Robotics, ROS, Python, C++</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  header {
+    background: #a20e20;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0.8rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #75474d, #ab397f);
+    color: white;
+  }
+  .hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .btn {
+    background: #1abc9c;
+    color: #FFFFFF;
+    padding: 0.8rem 1.6rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn:hover {
+    background: #ffb300;
+  }
+
+  .categories {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .categories h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  .card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #000000;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #a20e20;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 60px;
+  }
+
+  /* ✅ RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav {
+      justify-content: flex-start;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav a {
+      margin: 0.3rem 0;
+    }
+    .hero {
+      padding: 2rem 1rem;
+    }
+    .hero h2 {
+      font-size: 1.4rem;
+    }
+    .hero p {
+      font-size: 0.9rem;
+    }
+    .btn {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Robotics Academy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a href="membership.html">Get Premium</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Learn Robotics, Python, ROS, C++, and Control Systems</h2>
+    <p>Free lessons + Premium advanced content for serious learners</p>
+    <a href="lessons.html" class="btn">Start Learning</a>
+  </section>
+
+  <section class="categories">
+    <h2>Explore Categories</h2>
+    <div class="grid">
+      <div class="card"><a href="lessons.html#robotics"><h3>Robotics</h3></a></div>
+      <div class="card"><a href="lessons.html#python"><h3>Python</h3></a></div>
+      <div class="card"><a href="lessons.html#ros"><h3>ROS</h3></a></div>
+      <div class="card"><a href="lessons.html#cpp"><h3>C++</h3></a></div>
+      <div class="card"><a href="lessons.html#microcontrollers"><h3>Microcontrollers</h3></a></div>
+      <div class="card"><a href="lessons.html#control"><h3>Control Systems</h3></a></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Robotics Academy</p>
+  </footer>
+</body>
+</html>
